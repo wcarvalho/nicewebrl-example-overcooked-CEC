@@ -2,13 +2,16 @@
 
 This is the human-AI experiment code from the paper [Cross-environment Cooperation Enables Zero-shot Multi-agent Coordination](https://arxiv.org/abs/2504.12714), which explores how environment diversity can build agents capable of robust cooperation with humans. To learn more, check out the [project website](https://kjha02.github.io/publication/cross-env-coop).
 
-To get started, first clone and install the repository:
+## Installation
+
+To get started, install dependencies using uv:
 
 ```bash
-git clone https://github.com/KJha02/crossEnvCooperation.git
-cd crossEnvCooperation
-pip install -e .
-cd ..
+# Install uv if you haven't already
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Install dependencies
+uv sync
 ```
 
 ## Counter Circuit Experiment
@@ -16,7 +19,7 @@ cd ..
 To run the counter circuit experiment, run the following command:
 
 ```bash
-python web_app.py 'counter_circuit'
+uv run python web_app.py 'counter_circuit'
 ```
 
 ## Coordination Ring Experiment
@@ -24,7 +27,25 @@ python web_app.py 'counter_circuit'
 To run the coordination ring experiment, run the following command:
 
 ```bash
-python web_app.py 'coord_ring'
+uv run python web_app.py 'coord_ring'
+```
+
+## Deploying online with fly.io
+
+**Prerequisites**: Install the [fly CLI](https://fly.io/docs/hands-on/install-flyctl/)
+
+```bash
+# Login to fly.io
+flyctl auth login
+
+# setup configuration
+flyctl launch --dockerfile Dockerfile --name overcooked-cec --config fly.toml --vm-size 'performance-2x' --yes
+
+# deploy to servers
+flyctl deploy --config fly.toml
+
+# scale to multiple regions (optional, for decreasing latency)
+flyctl scale count 10 --config fly.toml --region "iad,sea,lax,den" --yes
 ```
 
 
