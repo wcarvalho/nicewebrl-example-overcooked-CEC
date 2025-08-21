@@ -1,0 +1,37 @@
+[project]
+name = "nicewebrl-overcooked-cec"
+version = "0.1.0"
+description = "Cross-Environment Cooperation example for NiceWebRL"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "nicewebrl @ git+https://github.com/KempnerInstitute/nicewebrl.git",
+    "jaxmarl @ git+https://github.com/KJha02/crossEnvCooperation.git",
+    "jax==0.4.16",  # needed for backward compatibility
+    "jaxlib==0.4.16",  # needed for backward compatibility
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "isort",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[tool.black]
+line-length = 88
+target-version = ["py39"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
