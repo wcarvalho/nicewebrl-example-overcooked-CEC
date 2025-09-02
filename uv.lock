@@ -2010,7 +2010,7 @@ wheels = [
 [[package]]
 name = "nicewebrl"
 version = "0.0.3"
-source = { git = "https://github.com/KempnerInstitute/nicewebrl.git#a76b7c25109962f34fd41a02502567505461911e" }
+source = { git = "https://github.com/KempnerInstitute/nicewebrl.git#2c2b0eeb2e264d080d30ed11c71d104185bd2217" }
 dependencies = [
     { name = "distrax" },
     { name = "flax" },
