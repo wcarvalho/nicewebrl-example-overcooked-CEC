@@ -51,4 +51,4 @@ flyctl scale count 10 --config fly.toml --region "iad,sea,lax,den" --yes
 flyctl logs --config fly.toml
 ```
 
-**Note:**: [fly.io pricing](https://fly.io/docs/about/pricing/)
+**Note:** [fly.io pricing](https://fly.io/docs/about/pricing/)
