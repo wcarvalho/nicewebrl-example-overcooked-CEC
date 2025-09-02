@@ -124,7 +124,7 @@ async def collect_demographic_info(container):
     await button.clicked()
 
 
-async def on_startup_with_ui(stage_container):
+async def on_startup(stage_container):
   """Called when experiment starts - UI is available"""
   if not app.storage.user.get("experiment_started", False):
     await make_consent_form(stage_container)
@@ -190,6 +190,6 @@ nicewebrl.run(
     experiment_file=experiment_file,
     title="Overcooked CEC Experiment",
     reload=False,
-    on_startup_fn=on_startup_with_ui,
+    on_startup_fn=on_startup,
     on_termination_fn=finish_experiment,
 )
