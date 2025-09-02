@@ -10,8 +10,8 @@ WORKDIR /app
 # Copy everything
 COPY . /app
 
-# Install dependencies with uv
-RUN uv sync --frozen
+# Remove any existing .venv and create environment
+RUN rm -rf .venv && uv sync --python 3.12
 
 ENV PYTHONUNBUFFERED=1
 ENV LOG_LEVEL=DEBUG

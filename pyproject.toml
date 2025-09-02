@@ -7,8 +7,7 @@ requires-python = ">=3.10"
 dependencies = [
     "nicewebrl @ git+https://github.com/KempnerInstitute/nicewebrl.git",
     "jaxmarl @ git+https://github.com/KJha02/crossEnvCooperation.git",
-    "jax==0.4.16",  # needed for backward compatibility
-    "jaxlib==0.4.16",  # needed for backward compatibility
+    "aiohttp",
 ]
 
 [project.optional-dependencies]

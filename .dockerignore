@@ -1,0 +1,14 @@
+# flyctl launch added from .venv/.gitignore
+.venv/**/*
+
+# flyctl launch added from .venv/lib/python3.11/site-packages/hydra/grammar/.gitignore
+.venv/lib/python3.11/site-packages/hydra/grammar/**/OverrideLexer.tokens
+
+# flyctl launch added from .venv/lib/python3.11/site-packages/hydra/grammar/gen/.gitignore
+.venv/lib/python3.11/site-packages/hydra/grammar/gen/**/*
+!.venv/lib/python3.11/site-packages/hydra/grammar/gen/**/.gitignore
+
+
+# flyctl launch added from .venv/lib/python3.11/site-packages/hydra/test_utils/configs/missing_init_py/.gitignore
+!.venv/lib/python3.11/site-packages/hydra/test_utils/configs/missing_init_py/**/.gitignore
+fly.toml

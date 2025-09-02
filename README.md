@@ -11,7 +11,7 @@ To get started, install dependencies using uv:
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Install dependencies
-uv sync
+uv sync --python 3.12
 ```
 
 ## Counter Circuit Experiment
@@ -39,16 +39,16 @@ uv run python web_app.py 'coord_ring'
 flyctl auth login
 
 # setup configuration
-flyctl launch --dockerfile Dockerfile --name overcooked-cec --config fly.toml --vm-size 'performance-2x' --yes
+flyctl launch --dockerfile Dockerfile --name overcooked-cec --config fly.toml --vm-size 'performance-8x' --yes
 
-# deploy to servers
+# deploy to servers/update deployment
 flyctl deploy --config fly.toml
 
 # scale to multiple regions (optional, for decreasing latency)
 flyctl scale count 10 --config fly.toml --region "iad,sea,lax,den" --yes
+
+# to see logs of run
+flyctl logs --config fly.toml
 ```
 
-
-
-
-
+**Note:**: [fly.io pricing](https://fly.io/docs/about/pricing/)

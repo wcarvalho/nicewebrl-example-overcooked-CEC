@@ -1,4 +1,4 @@
-# fly.toml app configuration file for overcooked-cec
+# fly.toml app configuration file generated for overcooked-cec-weathered-fire-3867 on 2025-09-01T22:22:10-04:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -18,7 +18,4 @@ primary_region = 'bos'
   processes = ['app']
 
 [[vm]]
-  size = 'performance-2x'
-  memory = '8gb'
-  cpu_kind = 'performance'
-  cpus = 2
+  size = 'performance-8x'
